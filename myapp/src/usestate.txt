@@ -1,0 +1,36 @@
+import logo from './logo.svg';
+import './App.css';
+import { useState } from 'react';
+import React, { Fragment } from 'react';
+
+function App() {
+  const [count, setCount] = useState(0);
+  const [name, setName] = useState("")
+  return(
+    <div className='App'>
+      <input 
+        type='text' 
+          placeholder='Name'
+            onChange={(event) => {
+              setName(event.target.value);
+            }}
+            />
+            <h1>{name}</h1>
+      
+
+
+      <div id="count">{count}
+          <br></br>
+          <button onClick={() => {
+            // setCount(count+1)
+            setCount((currentValue) => {return(currentValue+1);
+            })
+          }}>
+          Increase Count
+          </button>
+        </div> 
+      </div>
+  );
+}
+
+export default App;
